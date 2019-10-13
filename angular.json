@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/DevBestStudio",
+            "outputPath": "dist/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -29,50 +29,36 @@
             ],
             "styles": [
               "src/styles.sass",
-
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/assets/css/font-awesome.min.css",
               "src/assets/css/linea-icon.css",
               "src/assets/css/fancy-buttons.css",
-
               "src/assets/css/animate.css",
               "src/assets/css/jquery.vegas.css",
               "src/assets/css/baraja.css",
               "src/assets/css/jquery.bxslider.css",
-
-
               "src/assets/css/style.css",
               "src/assets/css/responsive.css",
-
-
-
               "src/assets/css/schemes/red.css",
               "src/assets/css/schemes/orange.css",
-
               "src/assets/css/schemes/gray.css",
               "src/assets/css/color-switcher.css"
             ],
             "scripts": [
               "src/assets/js/jquery-1.11.1.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.js",
-
               "src/assets/js/bootstrapValidator.min.js",
               "src/assets/js/modernizr.js",
               "src/assets/js/jquery.easing.1.3.js",
-
               "src/assets/js/jquery.baraja.js",
               "src/assets/js/jquery.vegas.min.js",
               "src/assets/js/jquery.bxslider.min.js",
-
               "src/assets/js/jquery.ajaxchimp.min.js",
               "src/assets/js/jquery.nicescroll.min.js",
               "src/assets/js/jquery.nav.js",
               "src/assets/js/jquery.appear.js",
               "src/assets/js/jquery.fitvids.js",
-
-
               "src/assets/js/custom.js",
-
               "src/assets/js/color-switcher.js",
               "src/assets/js/afterLoad.js"
             ]
@@ -165,6 +151,29 @@
           "configurations": {
             "production": {
               "devServerTarget": "DevBestStudio:serve:production"
+            }
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/server",
+            "main": "src/main.server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "sourceMap": false,
+              "optimization": {
+                "scripts": false,
+                "styles": true
+              }
             }
           }
         }
