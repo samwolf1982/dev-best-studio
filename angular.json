@@ -39,7 +39,8 @@
               "src/assets/css/jquery.bxslider.css",
               "src/assets/css/style.css",
               "src/assets/css/responsive.css",
-              "src/assets/css/schemes/red.css"
+              "src/assets/css/schemes/red.css",
+              "src/assets/css/schemes/blue.css"
 
             ],
             "scripts": [

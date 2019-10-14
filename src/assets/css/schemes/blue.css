@@ -1,0 +1,60 @@
+/*
+#E74C3C
+#C0392B
+
+*/
+
+
+::-moz-selection {
+    color: #ffffff;
+    background: #656dcb;
+}
+
+::selection {
+    color: #ffffff;
+    background: #656dcb;
+}
+
+.btn-col,
+.project-details h5,
+.project-info h5 {
+border-color: #656dcb;
+color: #656dcb;
+}
+
+.btn-col:hover {
+color: #262E95;
+}
+
+.section-title h3,
+.section-title h4,
+.step-no,
+.sub-steps .icon,
+.sub-steps .sub-text,
+.testimonial .happy-client,
+.client-photos .photo-hold {
+border-color:#656dcb;
+}
+
+.color-scheme,
+.service-icon,
+.step-no .no-inner,
+.site-name:hover,
+.project-details .details-list li .strong,
+.social-icons ul li a:hover {
+color:#656dcb;
+}
+
+.site-name span,
+.photo-overlay h4 {
+background-color: #656dcb;
+}
+
+.photo-zoom:before {
+	border-color: rgba(0, 255, 255, 0) rgba(255, 0, 255, 0) rgb(46, 45, 231) rgba(255, 255, 10, 0);
+
+}
+
+
+
+

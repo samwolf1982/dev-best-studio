@@ -1,6 +1,8 @@
 import {Component, Inject, OnInit, PLATFORM_ID} from '@angular/core';
 import {isPlatformBrowser} from '@angular/common';
+
 declare var $: any;
+
 @Component({
   selector: 'app-initiator-jquery',
   templateUrl: './initiator-jquery.component.html',
@@ -22,55 +24,58 @@ export class InitiatorJqueryComponent implements OnInit {
   runInit() {
 
 
-
-
-
     //--------------**************
 
     /* -----------------------------
     Pre Loader
     ----------------------------- */
-    $(window).load(function() {
+    $(window).load(function () {
       'use strict';
       $('.loading-icon').delay(500).fadeOut();
       $('#preloader').delay(800).fadeOut('slow');
     });
 
 
+
+
+
     /* -----------------------------
     Backgroung slider
     ----------------------------- */
-    $(window).ready(function() {
+    $(window).ready(function () {
       'use strict';
       $.vegas('slideshow', {
-        backgrounds:[
-          { src:'/assets/images/bg-slider/bg-1.jpg', fade:1000 },
-          { src:'/assets/images/bg-slider/bg-2.jpg', fade:1000 },
-          { src:'/assets/images/bg-slider/bg-3.jpg', fade:1000 }
+        background: {
+          src: '/assets/images/bg-slider/bg-1.jpg', // defined by Css,
+          fade:        0,
+        },
+        // opacity: 0.1,
+        backgrounds: [
+          {src: '/assets/images/bg-slider/bg-1.jpg', fade: 1000},
+          {src: '/assets/images/bg-slider/bg-2.jpg', fade: 1000},
+          {src: '/assets/images/bg-slider/bg-3.jpg', fade: 1000}
         ]
       })();
     });
 
 
-
-
     /* -----------------------------
     Scroll into viewPort Animation
     ----------------------------- */
-    $(document).ready(function() {
+    $(document).ready(function () {
       'use strict';
-      $('.animated').appear(function() {
+      $('.animated').appear(function () {
         var element = $(this),
           animation = element.data('animation'),
           animationDelay = element.data('animation-delay');
-        if ( animationDelay ) {
+        if (animationDelay) {
 
-          setTimeout(function(){
-            element.addClass( animation + " visible");
+          setTimeout(function () {
+            element.addClass(animation + " visible");
           }, animationDelay);
 
         } else {
-          element.addClass( animation + " visible");
+          element.addClass(animation + " visible");
         }
       });
     });
@@ -79,7 +84,7 @@ export class InitiatorJqueryComponent implements OnInit {
     /* -----------------------------
     NiceScroll
     ----------------------------- */
-    $(document).ready(function() {
+    $(document).ready(function () {
       'use strict';
       $("html").niceScroll({
         cursorcolor: '#E74C3C',
@@ -95,11 +100,10 @@ export class InitiatorJqueryComponent implements OnInit {
     });
 
 
-
     /* -----------------------------
     Fitvids init
     ----------------------------- */
-    $(document).ready(function(){
+    $(document).ready(function () {
       'use strict';
       $('.video-content').fitVids();
     });
@@ -108,13 +112,13 @@ export class InitiatorJqueryComponent implements OnInit {
     /* -----------------------------
     IE 9 Placeholder fix
     ----------------------------- */
-    $('[placeholder]').focus(function() {
+    $('[placeholder]').focus(function () {
       var input = $(this);
       if (input.val() == input.attr('placeholder')) {
         input.val('');
         input.removeClass('placeholder');
       }
-    }).blur(function() {
+    }).blur(function () {
       var input = $(this);
       if (input.val() == '' || input.val() == input.attr('placeholder')) {
         input.addClass('placeholder');
@@ -123,79 +127,76 @@ export class InitiatorJqueryComponent implements OnInit {
     }).blur();
 
 
-
     /* -----------------------------
     Screenshot Load
     ----------------------------- */
-    $(document).ready(function() {
+    $(document).ready(function () {
       'use strict';
-      $('.view-project').on('click', function(e) {
+      $('.view-project').on('click', function (e) {
         e.preventDefault();
 
-        var href 			= $(this).attr('href') + ' .portfolio-project',
-          portfolioWrap	= $('.porfolio-container'),
-          contentLoaded 	= $('#portfolio-load'),
-          offset			= $('#section-screenshots').offset().top;
+        var href = $(this).attr('href') + ' .portfolio-project',
+          portfolioWrap = $('.porfolio-container'),
+          contentLoaded = $('#portfolio-load'),
+          offset = $('#section-screenshots').offset().top;
 
-        portfolioWrap.animate({'left':'-120%'},{duration:400,queue:false});
+        portfolioWrap.animate({'left': '-120%'}, {duration: 400, queue: false});
         portfolioWrap.fadeOut(400);
-        $('html, body').animate({scrollTop: offset},{duration:800,queue:true});
-        setTimeout(function(){ $('#portfolio-loader').fadeIn('fast'); },300);
+        $('html, body').animate({scrollTop: offset}, {duration: 800, queue: true});
+        setTimeout(function () {
+          $('#portfolio-loader').fadeIn('fast');
+        }, 300);
 
-        setTimeout(function(){
-          contentLoaded.load(href, function(){
+        setTimeout(function () {
+          contentLoaded.load(href, function () {
             $('#portfolio-loader').fadeOut('fast');
-            contentLoaded.fadeIn(600).animate({'left':'0'},{duration:800,queue:false});
+            contentLoaded.fadeIn(600).animate({'left': '0'}, {duration: 800, queue: false});
             $('.back-button').fadeIn(600);
           });
-        },400);
-
+        }, 400);
 
 
       });
 
-      $('.backToProject').on('click', function(e){
+      $('.backToProject').on('click', function (e) {
         e.preventDefault();
 
-        var portfolioWrap	= $('.porfolio-container'),
-          contentLoaded 	= $('#portfolio-load');
+        var portfolioWrap = $('.porfolio-container'),
+          contentLoaded = $('#portfolio-load');
 
-        contentLoaded.animate({'left':'105%'},{duration:400,queue:false}).delay(300).fadeOut(400);
+        contentLoaded.animate({'left': '105%'}, {duration: 400, queue: false}).delay(300).fadeOut(400);
         $(this).parent().fadeOut(400);
-        setTimeout(function(){
-          portfolioWrap.animate({'left':'0'},{duration:400,queue:false});
+        setTimeout(function () {
+          portfolioWrap.animate({'left': '0'}, {duration: 400, queue: false});
           portfolioWrap.fadeIn(600);
-        },500);
+        }, 500);
 
       });
 
     });
 
 
-
-
     /* -----------------------------
 Main navigation
 ----------------------------- */
-    $(document).ready(function() {
+    $(document).ready(function () {
       'use strict';
       $('.nav').onePageNav({
         currentClass: 'current',
         scrollSpeed: 1000,
         easing: 'easeInOutQuint'
       });
-      $(window).bind('scroll', function(e) {
+      $(window).bind('scroll', function (e) {
         var scrollPos = $(window).scrollTop();
         scrollPos > 220 ? $('.sticky-section').addClass('nav-bg') : $('.sticky-section').removeClass('nav-bg');
       });
     });
 
 
-
     /* -----------------------------
 MailCimp Plugin Script
 ----------------------------- */
-    $(document).ready(function() {
+    $(document).ready(function () {
       'use strict';
       $('#subscription-form').ajaxChimp({
         callback: mailchimpCallback,
@@ -203,7 +204,7 @@ MailCimp Plugin Script
       });
 
       function mailchimpCallback(resp) {
-        if(resp.result === 'success') {
+        if (resp.result === 'success') {
           $('.subscription-success')
             .html(resp.msg)
             .delay(500)
@@ -211,7 +212,7 @@ MailCimp Plugin Script
 
           $('.subscription-success').fadeOut(8000);
 
-        } else if(resp.result === 'error') {
+        } else if (resp.result === 'error') {
           $('.subscription-failed')
             .html(resp.msg)
             .delay(500)
@@ -224,11 +225,10 @@ MailCimp Plugin Script
     });
 
 
-
     /* -----------------------------
     BxSlider
     ----------------------------- */
-    $(document).ready(function() {
+    $(document).ready(function () {
       'use strict';
       $('.testimonial-slider').bxSlider({
         pagerCustom: '#bx-pager',
@@ -239,23 +239,22 @@ MailCimp Plugin Script
     });
 
 
-
     /* -----------------------------
 Contact form
 ----------------------------- */
-    $(document).ready(function() {
+    $(document).ready(function () {
       'use strict';
-      $('form.contact-form').on('submit', function(e) {
-        $.post('contact/contact.php', $(this).serialize(), function(response) {
+      $('form.contact-form').on('submit', function (e) {
+        $.post('contact/contact.php', $(this).serialize(), function (response) {
           if ($('.confirmation p').html() != "") {
             $('.confirmation p').replaceWith('<p><span class="fa fa-check"></span></p>');
           }
           $('.confirmation p').append(response).parent('.confirmation').show();
           $('html, body').animate({
             scrollTop: $('#section-contact').offset().top
-          },{duration:800,queue:true});
+          }, {duration: 800, queue: true});
           $('.form-item').val('');
-          setTimeout(function() {
+          setTimeout(function () {
             $('.confirmation').hide();
           }, 8000);
         });
