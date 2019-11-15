@@ -51,8 +51,8 @@ export class InitiatorJqueryComponent implements OnInit {
         },
         // opacity: 0.1,
         backgrounds: [
-          {src: '/assets/images/bg-slider/bg-1.jpg', fade: 1000},
-          {src: '/assets/images/bg-slider/bg-2.jpg', fade: 1000},
+          {src: '/assets/images/bg-slider/bg-3.jpg', fade: 1000},
+          {src: '/assets/images/bg-slider/bg-3.jpg', fade: 1000},
           {src: '/assets/images/bg-slider/bg-3.jpg', fade: 1000}
         ]
       })();

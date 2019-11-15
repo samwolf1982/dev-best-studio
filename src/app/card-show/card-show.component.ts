@@ -1,4 +1,4 @@
-import {Component, Inject, AfterViewInit, OnInit, PLATFORM_ID} from '@angular/core';
+import {AfterViewInit, Component, Inject, OnInit, PLATFORM_ID} from '@angular/core';
 import {isPlatformBrowser} from '@angular/common';
 
 declare var $: any;
@@ -11,7 +11,6 @@ declare var $: any;
 export class CardShowComponent implements OnInit, AfterViewInit {
 
   public data = [];
-
 
 
   constructor(@Inject(PLATFORM_ID) private platformId: object) {
@@ -104,39 +103,50 @@ export class CardShowComponent implements OnInit, AfterViewInit {
     return [
       {
         header: 'English Film',
-        text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa',
-        img: '/assets/images/cards/e-film.png'
+        text: 'Платформа для изучения английского языка',
+        img: '/assets/images/cards/e-film.png',
+        url: 'https://english-films.com'
       },
       {
-        header: 'English Film2',
-        text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa',
-        img: '/assets/images/cards/2.jpg'
+        header: 'Доминанта',
+        text: 'Агентство недвижимости  Одесса',
+        img: '/assets/images/cards/dominanta.jpg',
+        url: 'https://dominanta-d.com/catalog'
       },
       {
-        header: 'English Film3',
-        text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa ',
-        img: '/assets/images/cards/3.jpg'
+        header: 'Antinumus',
+        text: 'Антикварный магазин Antinumus',
+        img: '/assets/images/cards/antinumus.jpg',
+        url: 'https://antinumus.com/'
       },
       {
-        header: 'English Film3',
-        text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa ',
-        img: '/assets/images/cards/3.jpg'
+        header: 'AdborLutck',
+        text: 'Магазин брендовых детских товаров Луцк',
+        img: '/assets/images/cards/adbor.png',
+        url: 'https://adbor-lutsk.com.ua'
       },
       {
-        header: 'English Film3',
-        text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa ',
-        img: '/assets/images/cards/3.jpg'
+        header: 'Babooshka',
+        text: 'Быстрая дотавка домашней еды на дом',
+        img: '/assets/images/cards/babush2.png',
+        url: 'https://www.babooshka.com.ua/'
       },
       {
-        header: 'English Film3',
-        text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa ',
-        img: '/assets/images/cards/3.jpg'
+        header: 'LookMyBets',
+        text: 'Социальная сеть для капперов (спортивный аналитик)',
+        img: '/assets/images/cards/look.jpg',
+        url: 'https://main.lookmybets.com/bet'
       },
       {
-        header: 'English Film',
-        text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa ',
-        img: '/assets/images/cards/3.jpg'
+        header: 'Eklektik',
+        text: 'Дизайнерская студия, мастерская идей',
+        img: '/assets/images/cards/ekle.png',
+        url: 'https://eklektikstore.com.ua'
       },
     ];
+  }
+
+  openTab(e: number) {
+    window.open(this.data[e].url, '_blank');
   }
 }

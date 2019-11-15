@@ -1,21 +1,23 @@
 <!--=== Features section Starts ===-->
 <section id="section-feature" class="feature-wrap">
   <div class="container features center">
+    <h3 class="text-center center" >Портфолио</h3>
     <div class="row">
+
       <div class="col-lg-12">
         <!--Features container Starts -->
         <ul id="card-ul" class="features-hold baraja-container">
 
 
           <!-- Single Feature Starts -->
-          <li *ngFor="let e of data" class="single-feature" title="{{e.header}}">
-            <img src="{{e.img}}" alt="" class="feature-image" /><!-- Feature Icon -->
+          <li *ngFor="let e of data; let i = index" class="single-feature" title="{{e.header}}">
+            <img src="{{e.img}}" alt="" class="feature-image"/><!-- Feature Icon -->
             <h4 class="feature-title color-scheme">{{e.header}}</h4>
             <p class="feature-text">
               {{e.text}}
             </p>
-            <a href="#" class="fancy-button button-line btn-col small zoom">
-              Детально
+            <a (click)="openTab(i)" href="#" class="fancy-button button-line btn-col small zoom">
+              Результат
               <span class="icon">
 										<i class="fa fa-leaf"></i>
 									</span>
@@ -24,31 +26,28 @@
           <!-- Single Feature Ends -->
 
 
-
-
-
-
         </ul>
         <!--Features container Ends -->
 
         <!-- Features Controls Starts -->
         <div class="features-control relative">
-          <button class="control-icon fancy-button button-line no-text btn-col bell" id="feature-prev" title="Previous" >
+          <button class="control-icon fancy-button button-line no-text btn-col bell" id="feature-prev" title="Previous">
 								<span class="icon">
 									<i class="fa fa-arrow-left"></i>
 								</span>
           </button>
-          <button class="control-icon fancy-button button-line no-text btn-col zoom" id="feature-expand" title="Expand" >
+          <button class="control-icon fancy-button button-line no-text btn-col zoom" id="feature-expand" title="Expand">
 								<span class="icon">
 									<i class="fa fa-expand"></i>
 								</span>
           </button>
-          <button class="control-icon fancy-button button-line no-text btn-col zoom" id="feature-close" title="Collapse" >
+          <button class="control-icon fancy-button button-line no-text btn-col zoom" id="feature-close"
+                  title="Collapse">
 								<span class="icon">
 									<i class="fa fa-compress"></i>
 								</span>
           </button>
-          <button class="control-icon fancy-button button-line no-text btn-col bell" id="feature-next" title="Next" >
+          <button class="control-icon fancy-button button-line no-text btn-col bell" id="feature-next" title="Next">
 								<span class="icon">
 									<i class="fa fa-arrow-right"></i>
 								</span>

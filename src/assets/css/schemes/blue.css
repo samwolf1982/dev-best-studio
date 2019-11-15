@@ -18,12 +18,12 @@
 .btn-col,
 .project-details h5,
 .project-info h5 {
-border-color: #656dcb;
-color: #656dcb;
+  border-color: #6c757d;
+  color: #6c757d;
 }
 
 .btn-col:hover {
-color: #262E95;
+color: #383d41;
 }
 
 .section-title h3,
@@ -33,7 +33,7 @@ color: #262E95;
 .sub-steps .sub-text,
 .testimonial .happy-client,
 .client-photos .photo-hold {
-border-color:#656dcb;
+border-color:#10B2B6;
 }
 
 .color-scheme,
@@ -42,12 +42,12 @@ border-color:#656dcb;
 .site-name:hover,
 .project-details .details-list li .strong,
 .social-icons ul li a:hover {
-color:#656dcb;
+color:#343a40;
 }
 
 .site-name span,
 .photo-overlay h4 {
-background-color: #656dcb;
+background-color: rgba(0, 255, 255, 0.66);;
 }
 
 .photo-zoom:before {
